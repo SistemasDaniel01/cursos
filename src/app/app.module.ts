@@ -5,16 +5,20 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { CardsComponent } from './cards/cards.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CursotComponent } from './cursot/cursot.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    CardsComponent
+    CardsComponent,
+    CursotComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
