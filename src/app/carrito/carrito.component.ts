@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CargarScriptsService } from '../cargar-scripts.service';
 
 @Component({
-  selector: 'app-cursot',
-  templateUrl: './cursot.component.html',
-  styleUrls: ['./cursot.component.css']
+  selector: 'app-carrito',
+  templateUrl: './carrito.component.html',
+  styleUrls: ['./carrito.component.css']
 })
-export class CursotComponent implements OnInit {
+export class CarritoComponent implements OnInit {
 
   constructor(private _CargaScripts:CargarScriptsService) {
     _CargaScripts.Carga(["cart"])
