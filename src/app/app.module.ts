@@ -10,6 +10,18 @@ import { CardsComponent } from './cards/cards.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CursotComponent } from './cursot/cursot.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { RegistroComponent } from './registro/registro.component';
+import { MessageboxComponent } from './messagebox/messagebox.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatDialogModule } from '@angular/material/dialog';
+
+
+
+
+// other imports
+
+
 
 @NgModule({
   declarations: [
@@ -18,13 +30,25 @@ import { CarritoComponent } from './carrito/carrito.component';
     HeaderComponent,
     CardsComponent,
     CursotComponent,
-    CarritoComponent
+    CarritoComponent,
+    RegistroComponent,
+    MessageboxComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule
+
+
   ],
   providers: [CargarScriptsService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[MessageboxComponent],
+
+
 })
 export class AppModule { }

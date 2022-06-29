@@ -1,3 +1,4 @@
+import { RegistroComponent } from './registro/registro.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { CardsComponent } from './cards/cards.component';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: 'home', component: CardsComponent },
   { path: 'curso', component: CursotComponent },
   { path: 'carro', component: CarritoComponent},
+  { path: 'registro', component: RegistroComponent},
   { path: "**", redirectTo: "home" }
 ];
 
