@@ -27,41 +27,24 @@ export class CursotComponent implements OnInit {
       price: 500000
     },
     {
-      url : "../../assets/img/platillo3.jpg",
+      url : "../../assets/img/javascript.png",
       description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-      title: "Card title 3",
-      price: 5
+      title: "JavaScript",
+      price: 600000
     },
     {
-      url : "../../assets/img/platillo4.jpg",
+      url : "../../assets/img/php.jpg",
       description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-      title: "Card title 4",
-      price: 5
+      title: "PHP",
+      price: 500000
     },
     {
-      url : "../../assets/img/platillo5.jpg",
+      url : "../../assets/img/spring.png",
       description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-      title: "Card title 5",
-      price: 5
+      title: "SpringBoot",
+      price: 500000
     },
-    {
-      url : "../../assets/img/platillo1.jpg",
-      description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-      title: "Card title 6",
-      price: 5
-    },
-    {
-      url : "../../assets/img/platillo2.jpg",
-      description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-      title: "Card title 7",
-      price: 5
-    },
-    {
-      url : "../../assets/img/platillo3.jpg",
-      description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-      title: "Card title 8",
-      price: 5
-    },
+    
   ]
 
   constructor(public dialog:MatDialog) { }
