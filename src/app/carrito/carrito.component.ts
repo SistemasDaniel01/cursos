@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Data } from '@angular/router';
 import { CargarScriptsService } from '../cargar-scripts.service';
 
 @Component({
@@ -7,6 +8,7 @@ import { CargarScriptsService } from '../cargar-scripts.service';
   styleUrls: ['./carrito.component.css']
 })
 export class CarritoComponent implements OnInit {
+
 
 
   key: string = "shoppingCart";

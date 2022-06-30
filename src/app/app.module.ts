@@ -15,6 +15,13 @@ import { MessageboxComponent } from './messagebox/messagebox.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatDialogModule } from '@angular/material/dialog';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+
+import{HttpClientModule} from '@angular/common/http';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth'
 
 
 
@@ -33,6 +40,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     CarritoComponent,
     RegistroComponent,
     MessageboxComponent,
+    LoginComponent,
 
 
 
@@ -41,7 +49,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
+
 
 
   ],

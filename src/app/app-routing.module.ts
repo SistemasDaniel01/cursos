@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { CardsComponent } from './cards/cards.component';
@@ -11,7 +12,20 @@ const routes: Routes = [
   { path: 'curso', component: CursotComponent },
   { path: 'carro', component: CarritoComponent},
   { path: 'registro', component: RegistroComponent},
-  { path: "**", redirectTo: "home" }
+  { path: 'login', component: LoginComponent},
+  {
+    path: '',
+    loadChildren: () =>
+      import('./features/auth/auth.module').then((m) => m.AuthModule),
+  },
+  { path: 'dashboard',
+   loadChildren: () =>
+   import('./features/dashboard/dashboard.module').then(m => m.DashboardModule) },
+   {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
