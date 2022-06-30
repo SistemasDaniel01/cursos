@@ -3,22 +3,26 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import {
+  Auth,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+} from '@angular/fire/auth';
+
+
+import { LoginData } from './core/interfaces/login-data.interface';
+
 @Injectable({
   providedIn: 'root'
 })
 export class LoginUserService {
 
 
-  private baseUrl=""
-  constructor(private httpClient: HttpClient) { }
+  constructor(private auth: Auth) {}
 
 
-
-  loginUser(user: User):Observable<object>{
-
-    console.log(user);
-    return this.httpClient.post(`${this.baseUrl}`,user);
-
-  }
 
 }
