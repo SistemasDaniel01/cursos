@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { CargarScriptsService } from './cargar-scripts.service';
@@ -22,6 +22,14 @@ import{HttpClientModule} from '@angular/common/http';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { ProduclistComponent } from './produclist/produclist.component';
+import { ProductitemComponent } from './productitem/productitem.component';
+import { CartitemComponent } from './cartitem/cartitem.component';
+import { NgxPayPalModule } from 'ngx-paypal';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ModalComponent } from './modal/modal.component';
+
 
 // other imports
 
@@ -36,6 +44,10 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     RegistroComponent,
     MessageboxComponent,
     LoginComponent,
+    ProduclistComponent,
+    ProductitemComponent,
+    CartitemComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +55,9 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     BrowserAnimationsModule,
     MatDialogModule,
     FormsModule,
+    NgxPayPalModule,
+    NgbModule,
+    NgxSpinnerModule,
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth())
@@ -52,6 +67,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
   ],
   providers: [CargarScriptsService],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents:[MessageboxComponent],
 
 

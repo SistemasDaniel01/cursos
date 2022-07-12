@@ -18,33 +18,33 @@ export class CursotComponent implements OnInit {
       url : "../../assets/img/angular.webp",
       description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
       title: "Angular",
-      price: 500000
+      price: 200
     },
     {
       url : "../../assets/img/java.jpg",
       description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
       title: "Java",
-      price: 500000
+      price: 200
     },
     {
       url : "../../assets/img/javascript.png",
       description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
       title: "JavaScript",
-      price: 600000
+      price: 200
     },
     {
       url : "../../assets/img/php.jpg",
       description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
       title: "PHP",
-      price: 500000
+      price: 300
     },
     {
       url : "../../assets/img/spring.png",
       description: "Some quick example text to build on the card title and make up the bulk of the card's content.",
       title: "SpringBoot",
-      price: 500000
+      price: 300
     },
-    
+
   ]
 
   constructor(public dialog:MatDialog) { }
@@ -60,6 +60,9 @@ export class CursotComponent implements OnInit {
     localStorage.setItem(this.key, data);
 
 this.dialog.open(MessageboxComponent,{data:{name:product.title}});
+
+
+
 
   }
 

@@ -1,52 +1,59 @@
-<br>
-<div>
 
-  <table class="table table-dark table-hover">
+<ngx-spinner>
+  <h3>Pagando</h3>
+</ngx-spinner>
+<div class="border">
+<div *ngIf="cartItems.length < 1">
 
-    <thead>
-      <tr class="text-primary">
-        <th scope="col">#</th>
-        <th scope="col">Productos</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Cantidad</th>
-      </tr>
-    </thead>
+  <div class="alert alert-info text-center">
 
-    <tbody class="tbody">
+    <h4>Carrito Vacio</h4>
 
-      <tr *ngFor="let product of products; index as i">
-        <td scope="row">i</td>
-
-        <td class="table__productos">
-          <img src="{{product.url}}" alt="{{product.title}}">
-          <h6 class="title">{{product.title}}</h6>
-        </td>
-
-        <td class="table__price">
-          <p>{{product.price}}</p>
-        </td>
-
-        <td class="table__cantidad">
-          <input type="number" min="1" value={{product.amount}} class="input__elemento">
-          <button (click)="onDeleteProduct(i)" class="delete btn btn-danger">x</button>
-        </td>
+  </div>
+</div>
 
 
-      </tr>
+<div *ngIf="cartItems.length > 0">
 
-    </tbody>
-  </table>
+  <div class="alert alert-info text-center">
+
+    <h3>Carrrito</h3>
+
+  </div>
+  <div class="text-center">
+    <ul class="list-group list-group-light">
+      <li class="list-group-item border" *ngFor="let item of cartItems; index as i" aria-current="true">
+        <div class="row">
+          <div class="col-md-10">
+
+            <app-cartitem [cartItem]="item"></app-cartitem>
+          </div>
+          <div class="col-md-2">
+           <i class="fas fa-trash fa-2x" (click)="deleteItem(i)"></i>
+
+          </div>
+
+        </div>
+      </li>
+    </ul>
 
 
-  <br><br>
-
-  <div class="row mx-4">
-    <div class="col">
-      <h3 class="itemCartTotal text-dark"></h3>
-    </div>
-    <div class="col d-flex justify-content-end">
-      <button class="btn btn-success">COMPRAR</button>
-    </div>
   </div>
 
+  <br>
+
+  <div class="alert alert-warning text-center">
+
+    <strong>Total:</strong> {{total}} USD
+
+  </div>
+
+  <button class="btn btn-outline-danger btn-block" (click)="emptyCart()">
+    <i class="fas fa-ban"></i> Vaciar Carro
+
+  </button> <br><br>
+
+  <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+
+</div>
 </div>

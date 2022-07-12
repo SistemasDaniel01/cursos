@@ -10,8 +10,10 @@ export const environment = {
     apiKey: 'AIzaSyAEQHPrYCWIS8xT0E7tkspivapactqzJGg',
     authDomain: 'angular-login-a26be.firebaseapp.com',
     messagingSenderId: '920908433176',
+
   },
-  production: false
+  production: false,
+  clientId:'ARZWGDfyklKgsvHfsMArfmG5tVx54sFTaDCo9NWJLhz27AH9SW8zDuKd8-EjjS052wFE502RbDrAvPpy',
 };
 
 /*

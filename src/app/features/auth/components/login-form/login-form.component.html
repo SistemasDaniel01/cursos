@@ -5,22 +5,22 @@
     <mat-label>Email</mat-label>
     <input matInput formControlName="email" type="text" required />
     <mat-error *ngIf="email?.hasError('required')">
-      Email is required
+      Correo requerido
     </mat-error>
     <mat-error *ngIf="email?.hasError('email')">
-      Email isn't valid. Please enter a valid email.
+      Correo no valido, por favor ingrese un correo valido
     </mat-error>
   </mat-form-field>
   <mat-form-field class="form-control">
     <mat-label>Password</mat-label>
     <input matInput formControlName="password" type="password" required />
     <mat-error *ngIf="password?.hasError('required')">
-      Password is required
+      Password requerida
     </mat-error>
   </mat-form-field>
   <div class="form-footer">
     <button [disabled]="form.invalid" mat-raised-button type="submit">
-      Submit
+      Ingresar
     </button>
   </div>
 </form>

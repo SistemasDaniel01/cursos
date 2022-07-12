@@ -52,12 +52,6 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/curso">Cursos</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/carro">Carrito</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/registro">Registrar</a>
-        </li>
       </ul>
       <!-- Left links -->
     </div>
@@ -94,14 +88,9 @@
           class="dropdown-menu dropdown-menu-end"
           aria-labelledby="navbarDropdownMenuAvatar"
         >
+
           <li>
-            <a class="dropdown-item" href="/login">My profile</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Settings</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Logout</a>
+            <a class="dropdown-item" (click)="logout()">Log out</a>
           </li>
         </ul>
       </div>
@@ -110,9 +99,10 @@
   </div>
   <!-- Container wrapper -->
 </nav>
+
 <!-- Navbar -->
   <!-- Navbar -->
-<br><br><br>
+
   <!-- Background image -->
   <div
     id="intro-example"
@@ -122,23 +112,9 @@
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
-          <h1 class="mb-3">Cursos Express</h1>
-          <h5 class="mb-4">los mejores cursos a la palma de tu mano</h5>
-          <a
-            class="btn btn-outline-light btn-lg m-2"
-            routerLink="/curso"
-            role="button"
-            rel="nofollow"
-            target="_blank"
-          >Cursos</a
-          >
-          <a
-            class="btn btn-outline-light btn-lg m-2"
-            href="#"
-            target="_blank"
-            role="button"
-          >Carrito</a
-          >
+          <h1 class="title">Cursos Express</h1>
+          <h5 class="subtittle">los mejores cursos a la palma de tu mano</h5>
+
         </div>
       </div>
     </div>

@@ -1,0 +1,3 @@
+<p> <strong> {{cartItem.productName}} </strong>
+  <strong>({{cartItem.qty}}<span *ngIf="cartItem.qty > 1"> unidades)</span> <span *ngIf="cartItem.qty < 2"> unidad)</span></strong>
+  <strong> Total: {{cartItem.qty * cartItem.productPrice | number: '1.1-2'}} USD</strong> </p>
