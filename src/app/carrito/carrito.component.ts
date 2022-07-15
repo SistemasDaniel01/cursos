@@ -1,15 +1,16 @@
-import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
+import { Data } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './../modal/modal.component';
 import { environment } from './../../environments/environment';
-import { StorageService } from './../services/storage.service';
-import { CartItemModel } from './../models/cart-item-model';
-import { Product } from './../models/product';
-import { MessageeService } from './../services/messagee.service';
-import { Component, OnInit } from '@angular/core';
-import { Data } from '@angular/router';
-import { CargarScriptsService } from '../cargar-scripts.service';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
+import { StorageService } from '../services/storage/storage.service';
+import { MessageeService } from '../services/message/messagee.service';
+
+/* Model */
+import { Product } from '../models/product/product';
+import { CartItemModel } from '../models/cart-item/cart-item-model';
 
 @Component({
   selector: 'app-carrito',

@@ -1,4 +1,6 @@
-import { Product } from './product';
+/* Model */
+import { Product } from "../product/product";
+
 export class CartItemModel {
   productId : Number;
   productName: String;
