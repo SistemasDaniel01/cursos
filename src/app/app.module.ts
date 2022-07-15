@@ -1,11 +1,8 @@
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { CargarScriptsService } from './cargar-scripts.service';
-
+/* Components */
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
 import { CardsComponent } from './cards/cards.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CursotComponent } from './cursot/cursot.component';
@@ -30,46 +27,43 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ModalComponent } from './modal/modal.component';
 
+/* Modules */
+import { ShareModule } from './share/share.module';
 
-// other imports
+/* services */
+import { CargarScriptsService } from './cargar-scripts.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
-    HeaderComponent,
+    LoginComponent,
     CardsComponent,
+    ModalComponent,
     CursotComponent,
     CarritoComponent,
     RegistroComponent,
+    CartitemComponent,
     MessageboxComponent,
-    LoginComponent,
     ProduclistComponent,
     ProductitemComponent,
-    CartitemComponent,
-    ModalComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatDialogModule,
-    FormsModule,
-    NgxPayPalModule,
     NgbModule,
+    ShareModule,
+    FormsModule,
+    BrowserModule,
+    NgxPayPalModule,
+    MatDialogModule,
     NgxSpinnerModule,
     HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth())
-
-
-
   ],
   providers: [CargarScriptsService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents:[MessageboxComponent],
-
-
 })
 export class AppModule { }
