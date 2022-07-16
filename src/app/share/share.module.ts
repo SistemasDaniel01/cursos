@@ -2,24 +2,27 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 /* Components */
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SimpleNavComponent } from './components/simple-nav/simple-nav.component';
-import { SimpleFooterComponent } from './components/simple-footer/simple-footer.component';
-import { SimpleHeaderComponent } from './components/simple-header/simple-header.component';
+import { NavComponent } from './nav/nav.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { SimpleNavComponent } from './simple-nav/simple-nav.component';
+import { SimpleFooterComponent } from './simple-footer/simple-footer.component';
+import { SimpleHeaderComponent } from './simple-header/simple-header.component';
 
 @NgModule({
   declarations: [
+    NavComponent,
     FooterComponent,
     HeaderComponent,
     SimpleNavComponent,
     SimpleFooterComponent,
-    SimpleHeaderComponent
+    SimpleHeaderComponent,
   ],
   imports: [
     CommonModule
   ],
   exports: [
+    NavComponent,
     FooterComponent,
     HeaderComponent,
     SimpleNavComponent,
