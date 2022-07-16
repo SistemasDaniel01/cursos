@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 /* Components */
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-// import { CardsComponent } from './cards/cards.component';
 import { CursotComponent } from './cursot/cursot.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { RegistroComponent } from './registro/registro.component';
@@ -16,7 +15,6 @@ import { HomeComponent } from './pages/home/home.component';
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['dashboard']);
 
-//component: CardsComponent
 const routes: Routes = [
   {
     path: 'home',

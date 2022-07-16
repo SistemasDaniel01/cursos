@@ -17,7 +17,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /* My Components */
 import { ModalComponent } from './modal/modal.component';
-import { CardsComponent } from './cards/cards.component';
 import { LoginComponent } from './login/login.component';
 import { CursotComponent } from './cursot/cursot.component';
 import { CarritoComponent } from './carrito/carrito.component';
@@ -38,7 +37,6 @@ import { PagesModule } from './pages/pages.module';
   declarations: [
     AppComponent,
     LoginComponent,
-    CardsComponent,
     ModalComponent,
     CursotComponent,
     CarritoComponent,
