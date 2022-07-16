@@ -30,7 +30,6 @@ import { ProductitemComponent } from './productitem/productitem.component';
 import { CargarScriptsService } from './services/load-scripts/cargar-scripts.service';
 
 /* Modules */
-import { ShareModule } from './share/share.module';
 import { PagesModule } from './pages/pages.module';
 
 @NgModule({
@@ -56,8 +55,6 @@ import { PagesModule } from './pages/pages.module';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
-    ShareModule,
     PagesModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth())

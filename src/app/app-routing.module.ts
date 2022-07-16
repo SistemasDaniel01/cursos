@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 /* Components */
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+// import { AppComponent } from './app.component';
+// import { LoginComponent } from './login/login.component';
 import { CursotComponent } from './cursot/cursot.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { RegistroComponent } from './registro/registro.component';
@@ -11,11 +11,22 @@ import { AuthGuard, redirectUnauthorizedTo, redirectLoggedInTo, } from '@angular
 
 /* Pages */
 import { HomeComponent } from './pages/home/home.component';
+import { StartComponent } from './pages/start/start.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['dashboard']);
 
 const routes: Routes = [
+  {
+    path: '',
+    component: StartComponent
+    // loadChildren: () =>
+    //   import('./features/auth/auth.module').then((m) => m.AuthModule),
+    // canActivate: [AuthGuard],
+    // data: { authGuardPipe: redirectLoggedInToHome },
+  },
   {
     path: 'home',
     component: HomeComponent
@@ -33,19 +44,12 @@ const routes: Routes = [
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
-    path: 'registro',
-    component: RegistroComponent
+    path: 'signup',
+    component: SignUpComponent
   },
   {
     path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: '',
-    loadChildren: () =>
-      import('./features/auth/auth.module').then((m) => m.AuthModule),
-    canActivate: [AuthGuard],
-    data: { authGuardPipe: redirectLoggedInToHome },
+    component: SignInComponent
   },
   {
     path: 'dashboard',
