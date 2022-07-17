@@ -49,14 +49,14 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: SignInComponent
+    loadChildren: () =>
+    import('./features/auth/auth.module').then((m) => m.AuthModule),
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: redirectLoggedInToHome },
   },
   {
     path: 'dashboard',
-    loadChildren: () =>
-      import('./features/dashboard/dashboard.module').then(m => m.DashboardModule),
-    canActivate: [AuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin },
+    component: HomeComponent
   },
   {
     path: '**',
