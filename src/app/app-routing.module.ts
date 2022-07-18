@@ -44,11 +44,8 @@ const routes: Routes = [
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
-    path: 'register',
-    loadChildren: () =>
-    import('./features/auth/auth.module').then((m) => m.AuthModule),
-    canActivate: [AuthGuard],
-    data: { authGuardPipe: redirectLoggedInToHome },
+    path: 'signup',
+    component: SignUpComponent
   },
   {
     path: 'login',
