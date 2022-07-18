@@ -4,16 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 /* Components */
 // import { AppComponent } from './app.component';
 // import { LoginComponent } from './login/login.component';
-import { CursotComponent } from './cursot/cursot.component';
-import { CarritoComponent } from './carrito/carrito.component';
-import { RegistroComponent } from './registro/registro.component';
+// import { CursotComponent } from './cursot/cursot.component';
+// import { CarritoComponent } from './carrito/carrito.component';
+// import { RegistroComponent } from './registro/registro.component';
 import { AuthGuard, redirectUnauthorizedTo, redirectLoggedInTo, } from '@angular/fire/auth-guard';
 
 /* Pages */
 import { HomeComponent } from './pages/home/home.component';
+import { CartComponent } from './pages/cart/cart.component';
 import { StartComponent } from './pages/start/start.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { CoursesComponent } from './pages/courses/courses.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['dashboard']);
@@ -29,17 +31,19 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
     path: 'courses',
-    component: CursotComponent,
+    component: CoursesComponent,
     canActivate: [AuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
     path: 'cart',
-    component: CarritoComponent,
+    component: CartComponent,
     canActivate: [AuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
@@ -53,10 +57,6 @@ const routes: Routes = [
     import('./features/auth/auth.module').then((m) => m.AuthModule),
     canActivate: [AuthGuard],
     data: { authGuardPipe: redirectLoggedInToHome },
-  },
-  {
-    path: 'dashboard',
-    component: HomeComponent
   },
   {
     path: '**',
