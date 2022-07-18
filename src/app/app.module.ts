@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 /* Components */
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { AppComponent } from './app.component';
@@ -48,6 +48,7 @@ import { PagesModule } from './pages/pages.module';
   imports: [
     NgbModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     NgxPayPalModule,
     MatDialogModule,

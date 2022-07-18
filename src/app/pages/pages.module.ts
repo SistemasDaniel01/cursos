@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { StartComponent } from './start/start.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { SignInComponent } from './sign-in/sign-in.component';
   ],
   imports: [
     CommonModule,
-    ShareModule
+    ShareModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   exports: [ ]
 })
