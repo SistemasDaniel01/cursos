@@ -1,6 +1,5 @@
 import { MessageboxComponent } from './../messagebox/messagebox.component';
 import { Component, OnInit } from '@angular/core';
-import { CargarScriptsService } from '../cargar-scripts.service';
 import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-cursot',

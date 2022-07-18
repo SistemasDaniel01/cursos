@@ -1,4 +1,4 @@
-import { CargarScriptsService } from './../cargar-scripts.service';
+import { CargarScriptsService } from '../services/load-scripts/cargar-scripts.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,10 +12,7 @@ export class RegistroComponent implements OnInit {
     _CargaScripts.Carga(["formulario"])
    }
 
-
   ngOnInit(): void {
   }
-
-  
 
 }

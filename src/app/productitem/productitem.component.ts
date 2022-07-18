@@ -1,6 +1,8 @@
-import { MessageeService } from './../services/messagee.service';
-import { Product } from './../models/product';
+import { Product } from '../models/product/product';
 import { Component, Input, OnInit } from '@angular/core';
+
+/* Model */
+import { MessageeService } from '../services/message/messagee.service';
 
 @Component({
   selector: 'app-productitem',
@@ -9,22 +11,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductitemComponent implements OnInit {
 
-
   @Input() product: Product;
 
-  constructor(
+  constructor(private messageeService: MessageeService) { }
 
-    private messageeService: MessageeService
+  ngOnInit(): void { }
 
-  ) { }
-
-  ngOnInit(): void {
-  }
-
-  addtoCart():void{
-
-    
-    this.messageeService.sendMessage(this.product);
-  }
+  addtoCart(): void { this.messageeService.sendMessage(this.product); }
 
 }
