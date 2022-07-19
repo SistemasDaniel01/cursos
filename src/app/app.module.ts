@@ -14,6 +14,7 @@ import { environment } from '../environments/environment';
 import { MatDialogModule } from '@angular/material/dialog';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ShareModule } from './share/share.module';
 
 /* My Components */
 import { ModalComponent } from './modal/modal.component';
@@ -55,6 +56,7 @@ import { PagesModule } from './pages/pages.module';
     NgxSpinnerModule,
     HttpClientModule,
     AppRoutingModule,
+    ShareModule,
     BrowserAnimationsModule,
     PagesModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
