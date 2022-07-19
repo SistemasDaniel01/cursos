@@ -1,3 +1,17 @@
-<p> <strong> {{cartItem.productName}} </strong>
-  <strong>({{cartItem.qty}}<span *ngIf="cartItem.qty > 1"> unidades)</span> <span *ngIf="cartItem.qty < 2"> unidad)</span></strong>
-  <strong> Total: {{cartItem.qty * cartItem.productPrice | number: '1.1-2'}} USD</strong> </p>
+<!-- <p> <strong> {{cartItem.productName}} </strong>
+  <strong>({{cartItem.qty}}<span *ngIf="cartItem.qty > 1"> unidades)</span> <span *ngIf="cartItem.qty < 2">
+      unidad)</span></strong>
+  <strong> Total: {{cartItem.qty * cartItem.productPrice | number: '1.1-2'}} USD</strong>
+</p> -->
+
+
+<!-- <img [src]="cartItem?.imageUrL" [alt]="cartItem?.name" class="thumbnail" /> -->
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/App_Store_%28iOS%29.svg/250px-App_Store_%28iOS%29.svg.png"  class="thumbnail" />
+
+<div class="info">
+  <span>{{ cartItem?.productName }}</span>
+  <!-- <span class="info-price">&dollar; {{ cartItem?.price | number: "1.2-2" }} </span> -->
+  <span class="info-price">&dollar; {{ cartItem.productPrice }} </span>
+</div>
+
+<!-- <button (click)="onDeleteClicked()"><i class="fas fa-times"></i></button> -->

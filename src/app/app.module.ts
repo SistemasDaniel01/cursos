@@ -31,6 +31,7 @@ import { CargarScriptsService } from './services/load-scripts/cargar-scripts.ser
 
 /* Modules */
 import { PagesModule } from './pages/pages.module';
+import { ShareModule } from './share/share.module';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { PagesModule } from './pages/pages.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     PagesModule,
+    ShareModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth())
   ],

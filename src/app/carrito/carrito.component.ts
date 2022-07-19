@@ -19,19 +19,16 @@ import { CartItemModel } from '../models/cart-item/cart-item-model';
 })
 export class CarritoComponent implements OnInit {
 
-
   cartItems: CartItemModel[] = [];
   total: number = 0;
 
   public payPalConfig?: IPayPalConfig;
 
   constructor(
-
     private messageeService: MessageeService,
     private storageService: StorageService,
-    private modalService:NgbModal,
-    private spinner:NgxSpinnerService
-
+    private modalService: NgbModal,
+    private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit(): void {
@@ -51,7 +48,7 @@ export class CarritoComponent implements OnInit {
     this.payPalConfig = {
       currency: 'USD',
       clientId: environment.clientId,
-      createOrderOnClient: (data) => <ICreateOrderRequest> {
+      createOrderOnClient: (data) => <ICreateOrderRequest>{
         intent: 'CAPTURE',
         purchase_units: [{
           amount: {
@@ -84,13 +81,13 @@ export class CarritoComponent implements OnInit {
       },
       onClientAuthorization: (data) => {
         console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point',
-         JSON.stringify(data));
-         this.openModal(
+          JSON.stringify(data));
+        this.openModal(
           data.purchase_units[0].items,
           data.purchase_units[0].amount.value
-         );
-         this.emptyCart();
-         this.spinner.hide();
+        );
+        this.emptyCart();
+        this.spinner.hide();
 
       },
       onCancel: (data, actions) => {
@@ -133,16 +130,16 @@ export class CarritoComponent implements OnInit {
     });
   }
 
-  getItemsList(): any[]{
+  getItemsList(): any[] {
 
 
-    const items:any[] = [];
-    let item={};
-    this.cartItems.forEach((it:CartItemModel)=>{
+    const items: any[] = [];
+    let item = {};
+    this.cartItems.forEach((it: CartItemModel) => {
       item = {
-        name:it.productName,
+        name: it.productName,
         quantity: it.qty,
-        unit_amount:{value:it.productPrice, currency_code:'USD'}
+        unit_amount: { value: it.productPrice, currency_code: 'USD' }
       };
       items.push(item);
 
@@ -172,6 +169,7 @@ export class CarritoComponent implements OnInit {
   }
 
   deleteItem(i: number): void {
+
     if (this.cartItems[i].qty > 1) {
       this.cartItems[i].qty--;
     } else {
@@ -182,10 +180,10 @@ export class CarritoComponent implements OnInit {
     this.storageService.setCart(this.cartItems);
   }
 
-  openModal(items: any,amount: any):void{
-
+  openModal(items: any, amount: any): void {
     const modalRef = this.modalService.open(ModalComponent);
     modalRef.componentInstance.items = items;
     modalRef.componentInstance.amount = amount;
-}
+  }
+
 }

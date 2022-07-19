@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 /* Components */
 // import { AppComponent } from './app.component';
 // import { LoginComponent } from './login/login.component';
-// import { CursotComponent } from './cursot/cursot.component';
+import { CursotComponent } from './cursot/cursot.component';
 // import { CarritoComponent } from './carrito/carrito.component';
 // import { RegistroComponent } from './registro/registro.component';
 import { AuthGuard, redirectUnauthorizedTo, redirectLoggedInTo, } from '@angular/fire/auth-guard';
@@ -37,7 +37,7 @@ const routes: Routes = [
   },
   {
     path: 'courses',
-    component: CoursesComponent,
+    component: CursotComponent,
     canActivate: [AuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },

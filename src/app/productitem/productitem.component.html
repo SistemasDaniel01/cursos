@@ -1,15 +1,12 @@
-<div class="card text-center mt-4">
-  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-    <img [src]="product.imageUrL" class="img-fluid"/>
-    <a>
-      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-    </a>
-  </div>
-  <div class="card-body">
-    <h2 class="card-title">{{product.name}}</h2>
-    <p class="card-text">{{product.description}}</p>
-    <p class="card-text">{{product.price}} USD</p>
-    <button (click)="addtoCart()" class="btn btn-outline-success" >
-      <i class="fas fa-shopping-cart"></i> Agregar al Carrito</button>
-  </div>
+<div class="img-container">
+  <img [src]="product.imageUrL" [alt]="product.name" />
 </div>
+
+<div class="info">
+  <span> <strong>{{ product.name }}</strong> </span>
+  <span> &dollar; {{ product.price | number: "1.2-2" }} </span>
+</div>
+
+<button (click)="addtoCart()" title="Añadir al Carrito">
+  <i class="fas fa-plus"></i>
+</button>
