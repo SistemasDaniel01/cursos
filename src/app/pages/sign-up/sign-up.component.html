@@ -1,3 +1,43 @@
 <app-simple-nav></app-simple-nav>
-<p>sign-up works!</p>
+<div class="background">
+  <div class="login-container">
+
+      <div class="form-container">
+<h2>Registro de usuario</h2>
+<form class="form" [formGroup]="formReg" (ngSubmit)="onSubmit()">
+  <mat-form-field class="form-control">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" type="text" required />
+    <mat-error *ngIf="email?.hasError('required')">
+      Correo requerido
+    </mat-error>
+    <mat-error *ngIf="email?.hasError('email')">
+      Correo no valido, por favor ingrese un correo valido
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="form-control">
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password" type="password" required />
+    <mat-error *ngIf="password?.hasError('required')">
+      Password requerida
+    </mat-error>
+  </mat-form-field>
+  <div class="form-footer"> <br>
+    <button class="btn btn-info"  mat-raised-button type="submit">
+      Registrar
+    </button>
+  </div>
+</form>
+<br>
+
+</div>
+<div class="text-container">
+
+  <h1>Bienvenido</h1>
+  <p>
+    si quieres disfrutar de esta aventura de cursos dale click en Ingresar </p>
+  <button (click)="onIngresar()">Ingresar</button>
+</div>
+  </div>
+</div>
 <app-simple-footer></app-simple-footer>

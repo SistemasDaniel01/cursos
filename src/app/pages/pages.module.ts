@@ -5,8 +5,10 @@ import { HomeComponent } from './home/home.component';
 import { StartComponent } from './start/start.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
-import { CoursesComponent } from './courses/courses.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 import { CartComponent } from './cart/cart.component';
+import { CoursesComponent } from './courses/courses.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { CartComponent } from './cart/cart.component';
   ],
   imports: [
     CommonModule,
-    ShareModule
+    ShareModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   exports: [ ]
 })

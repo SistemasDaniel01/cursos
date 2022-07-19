@@ -5,10 +5,10 @@ import { RouterModule, Routes } from '@angular/router';
 // import { AppComponent } from './app.component';
 // import { LoginComponent } from './login/login.component';
 import { CursotComponent } from './cursot/cursot.component';
-// import { CarritoComponent } from './carrito/carrito.component';
+import { CarritoComponent } from './carrito/carrito.component';
 // import { RegistroComponent } from './registro/registro.component';
 import { AuthGuard, redirectUnauthorizedTo, redirectLoggedInTo, } from '@angular/fire/auth-guard';
-
+import { canActivate } from '@angular/fire/auth-guard';
 /* Pages */
 import { HomeComponent } from './pages/home/home.component';
 import { CartComponent } from './pages/cart/cart.component';
@@ -32,20 +32,17 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [AuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin },
+    ...canActivate(()=> redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'courses',
     component: CursotComponent,
-    canActivate: [AuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin },
+    ...canActivate(()=> redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'cart',
-    component: CartComponent,
-    canActivate: [AuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin },
+    component: CarritoComponent,
+    ...canActivate(()=> redirectUnauthorizedTo(['/login']))
   },
   {
     path: 'signup',
@@ -53,10 +50,12 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () =>
-    import('./features/auth/auth.module').then((m) => m.AuthModule),
-    canActivate: [AuthGuard],
-    data: { authGuardPipe: redirectLoggedInToHome },
+    component:SignInComponent
+  },
+  {
+    path: 'dashboard',
+    component: HomeComponent,
+    ...canActivate(()=> redirectUnauthorizedTo(['/login']))
   },
   {
     path: '**',

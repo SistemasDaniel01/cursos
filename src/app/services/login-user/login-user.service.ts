@@ -1,4 +1,4 @@
-import { User } from './user';
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -13,7 +13,7 @@ import {
 } from '@angular/fire/auth';
 
 
-import { LoginData } from './core/interfaces/login-data.interface';
+
 
 @Injectable({
   providedIn: 'root'
