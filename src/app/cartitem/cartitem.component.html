@@ -6,7 +6,8 @@
 
 
 <!-- <img [src]="cartItem?.imageUrL" [alt]="cartItem?.name" class="thumbnail" /> -->
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/App_Store_%28iOS%29.svg/250px-App_Store_%28iOS%29.svg.png"  class="thumbnail" />
+<strong>({{cartItem.qty}}<span *ngIf="cartItem.qty > 1"> unds)</span> <span *ngIf="cartItem.qty < 2">
+  und)</span></strong>
 
 <div class="info">
   <span>{{ cartItem?.productName }}</span>
